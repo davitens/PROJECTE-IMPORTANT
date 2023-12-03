@@ -21,8 +21,16 @@ class Accions:
         self.pyboy.tick()
         self.pyboy.send_input(WindowEvent.RELEASE_ARROW_UP)
         self.pyboy.tick()
-        
+        self.pyboy.send_input(WindowEvent.PRESS_ARROW_UP)
+        self.pyboy.tick()
+        self.pyboy.send_input(WindowEvent.RELEASE_ARROW_UP)
+        self.pyboy.tick()
+
     def boto_DOWN(self):
+        self.pyboy.send_input(WindowEvent.PRESS_ARROW_DOWN)
+        self.pyboy.tick()
+        self.pyboy.send_input(WindowEvent.RELEASE_ARROW_DOWN)
+        self.pyboy.tick()
         self.pyboy.send_input(WindowEvent.PRESS_ARROW_DOWN)
         self.pyboy.tick()
         self.pyboy.send_input(WindowEvent.RELEASE_ARROW_DOWN)
@@ -33,13 +41,21 @@ class Accions:
         self.pyboy.tick()
         self.pyboy.send_input(WindowEvent.RELEASE_ARROW_RIGHT)
         self.pyboy.tick()
+        self.pyboy.send_input(WindowEvent.PRESS_ARROW_RIGHT)
+        self.pyboy.tick()
+        self.pyboy.send_input(WindowEvent.RELEASE_ARROW_RIGHT)
+        self.pyboy.tick()
 
     def boto_LEFT(self):
         self.pyboy.send_input(WindowEvent.PRESS_ARROW_LEFT)
         self.pyboy.tick()
         self.pyboy.send_input(WindowEvent.RELEASE_ARROW_LEFT)
         self.pyboy.tick()
-
+        self.pyboy.send_input(WindowEvent.PRESS_ARROW_LEFT)
+        self.pyboy.tick()
+        self.pyboy.send_input(WindowEvent.RELEASE_ARROW_LEFT)
+        self.pyboy.tick()
+        
     def boto_START(self):
         self.pyboy.send_input(WindowEvent.PRESS_BUTTON_START)
         self.pyboy.tick()

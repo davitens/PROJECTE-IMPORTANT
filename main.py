@@ -3,19 +3,28 @@ from accions import Accions
 import random
 import multiprocessing
 
+n=0
+
+def generate_random(exclude_number):
+    result = random.randint(1, 9)  # Generate a random number between 1 and 9
+    while result == exclude_number:
+        result = random.randint(1, 9)  # Regenerate if the result matches the excluded number
+    return result
+
 def run_code():
     pyboy = PyBoy('pokered.gb')
+    global n
     pyboy.set_emulation_speed(4)
     comandaments = Accions(pyboy)
     constant = 1
     while constant == 1:
-        n = random.randint(1, 9)
+        n = generate_random(n)
         if n == 1 or n == 7:
             comandaments.boto_A()
         if n == 3 or n == 9:
             comandaments.boto_B()
-        if n == 0 or n == 5:
-            comandaments.boto_START()
+        #if n == 0 or n == 5:
+        #    comandaments.boto_START()
         if n == 2:
             comandaments.boto_DOWN()
         if n == 6:
